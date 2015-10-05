@@ -14,7 +14,8 @@ docker run --name jmeterslave2 -d www.cybage-docker-registry.com:9080/jmeterslav
 
 export a=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave1 )
 export b=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave2 )
-export host=dev.alm-task-manager.com
+#export host=dev.alm-task-manager.com
+export host=$2
 #docker build -t jmetergenericmaster .
 docker build -t jmetergenericmaster .
 docker run --name jmetergenericmaster -d -v /reportsgeneric:/reportsgeneric -e IP=$a,$b -e host=$host jmetergenericmaster
