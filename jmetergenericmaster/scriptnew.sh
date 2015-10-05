@@ -18,8 +18,9 @@ export host=dev.alm-task-manager.com
 #docker build -t jmetergenericmaster .
 docker build -t jmetergenericmaster .
 docker run --name jmetergenericmaster -d -v /reportsgeneric:/reportsgeneric -e IP=$a,$b -e host=$host jmetergenericmaster
+ls /reportsgeneric
 
-#cp /reports/reportnew.xml  $WORKSPACE
+cp /reports/reportnew.xml  $WORKSPACE
 
 
 
