@@ -13,18 +13,22 @@ REPLACE="remote_hosts=$IP"
 echo  $REPLACE
 echo $IP
 echo $host
+echo $hostip
+echo $count
+echo $users
+
 
 
 sed -i "s/$SEARCH/$REPLACE/g" ./jmeter.properties
  pwd
-echo "172.27.59.35 dev.alm-task-manager.com" >> /etc/hosts
+echo "$hostip  $host" >> /etc/hosts
 
 cd /
 #rm -rf reports
 #mkdir $IP1
 #echo "remote_hosts=16.10.0.13,16.10.13.14">>/usr/share/bin/
 
-jmeter -n -t url-benchmarknew.jmx -Jusers=50 -Jcount=10 -Jhost=$host -l /reportsgeneric/reportgeneric.xml
+jmeter -n -t url-benchmarknew.jmx -Jusers=$users -Jcount=$count -Jhost=$host -l /reportsgeneric/reportgeneric.xml
 
 
 cd /usr/share/jmeter/bin
