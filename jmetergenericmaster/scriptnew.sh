@@ -27,7 +27,7 @@ docker build -t jmetergenericmaster .
 docker run --name jmetergenericmaster -d -v /reportsgeneric:/reportsgeneric -e IP=$a,$b -e host=$host -e users=$users -e count=$count -e hostip=$hostip  jmetergenericmaster
 ls /reportsgeneric
 
-cp /reportsgeneric/reportgeneric.xml  $workspace
+#cp /reportsgeneric/reportgeneric.xml  $workspace
 
 
 

@@ -28,7 +28,7 @@ docker run --name jmetermaster -d -v /reports:/reports -e IP=$a,$b  www.cybage-d
 
 ls /reports
 
-cp /reports/reportnew.xml  $1
+cp /reports/reportnew.xml  $workspace
 
 
 
