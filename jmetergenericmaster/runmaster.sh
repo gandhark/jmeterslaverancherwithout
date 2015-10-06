@@ -27,8 +27,8 @@ cd /
 #rm -rf reports
 #mkdir $IP1
 #echo "remote_hosts=16.10.0.13,16.10.13.14">>/usr/share/bin/
-
-jmeter -n -t url-benchmarknew.jmx -Jusers=$users -Jcount=$count -Jhost=$host -l /reportsgeneric/reportgeneric.xml
+echo "running jmeter tests with generic options  nd running it on remote servers too"
+jmeter -n -t url-benchmarknew.jmx -Jusers=$users -Jcount=$count -Jhost=$host -l /reportsgeneric/reportgeneric.xml -r
 
 
 cd /usr/share/jmeter/bin
