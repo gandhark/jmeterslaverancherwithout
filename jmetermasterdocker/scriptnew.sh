@@ -24,7 +24,7 @@ export b=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslav
 export host=dev.alm-task-manager.com
 #docker build -t jmetergenericmaster .
 #docker build -t jmetergenericmaster .
-docker run --name jmetergenericmaster -d -v /reports:/reports -e IP=$a,$b  jmetermaster
+docker run --name jmetercmaster -d -v /reports:/reports -e IP=$a,$b  jmetermaster
 ls /reports
 
 cp /reports/reportnew.xml  $1
