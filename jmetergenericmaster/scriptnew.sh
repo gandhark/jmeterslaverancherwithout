@@ -7,6 +7,9 @@ export users=$3
 export count=$4
 export hostip=$5
 
+
+echo $workspace;
+
 docker pull www.cybage-docker-registry.com:9080/jmeterslave
 #docker pull www.cybage-docker-registry.com:9080/jmetergenericmaster
 
@@ -24,7 +27,7 @@ export b=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslav
 #export host=dev.alm-task-manager.com
 #docker build -t jmetergenericmaster .
 docker build -t jmetergenericmaster .
-docker run --name jmetergenericmaster -d -v /reportsgeneric:/reportsgeneric -e IP=$a,$b -e host=$host -e users=$users -e count=$count -e hostip=$hostip  jmetergenericmaster
+docker run --name jmetergenericmaster -d -v $workspace:/reportsgeneric  -e IP=$a,$b -e host=$host -e users=$users -e count=$count -e hostip=$hostip  jmetergenericmaster
 ls /reportsgeneric
 
 #cp /reportsgeneric/reportgeneric.xml  $workspace
