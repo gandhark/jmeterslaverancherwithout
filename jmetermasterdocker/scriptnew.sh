@@ -13,7 +13,7 @@ docker run --name jmeterslave1 -d www.cybage-docker-registry.com:9080/jmeterslav
 docker run --name jmeterslave2 -d www.cybage-docker-registry.com:9080/jmeterslave
 
 
-
+echo "fetching slave containers IP and storing it into variable a and variable b";
 export a=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave1 )
 export b=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave2 )
 export host=dev.alm-task-manager.com

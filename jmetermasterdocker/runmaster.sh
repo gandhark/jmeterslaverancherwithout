@@ -16,10 +16,7 @@ sed -i "s/$SEARCH/$REPLACE/g" ./jmeter.properties
 echo "172.27.59.35 dev.alm-task-manager.com" >> /etc/hosts
 
 cd /
-#rm -rf reports
-#mkdir $IP1
-#echo "remote_hosts=16.10.0.13,16.10.13.14">>/usr/share/bin/
-
+echo "executing jmeter test cases";
 jmeter -n -t url-benchmarknew.jmx -l /reports/reportnew.xml -r
 
 
