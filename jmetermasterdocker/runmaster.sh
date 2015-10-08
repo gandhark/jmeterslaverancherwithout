@@ -8,7 +8,7 @@ cp /jmeter.properties .
 
 
 SEARCH="remote_hosts=172.17.0.140"
-REPLACE="remote_hosts=$IP"
+REPLACE="remote_hosts=$IP,127.0.0.1"
 mkdir $REPLACE
 mkdir $IP
 sed -i "s/$SEARCH/$REPLACE/g" ./jmeter.properties
