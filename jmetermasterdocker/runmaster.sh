@@ -1,5 +1,5 @@
 #!/bin/sh
-service apache2 restart
+#service apache2 restart
  cd /usr/share/jmeter/bin
 
 rm jmeter.properties
