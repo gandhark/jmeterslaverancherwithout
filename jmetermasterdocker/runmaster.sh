@@ -19,7 +19,7 @@ cd /
 echo "executing jmeter test cases";
 jmeter -n -t url-benchmarknew.jmx -l /reports/reportnew.xml -r
 
-
+sleep 400s;
 cd /usr/share/jmeter/bin
 cp jmeter-server jmeter-server.sh
  chmod +x jmeter jmeter-server *.sh
