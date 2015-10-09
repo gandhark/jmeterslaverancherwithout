@@ -7,7 +7,7 @@ docker pull www.cybage-docker-registry.com:9080/jmetermaster
 
 echo $2;
 
-for (( i=0;i<$number;i++ ))
+for (( i=1; i <= $number; i++ ))
 do
 
 #Run docker slave container$i
