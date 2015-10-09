@@ -19,7 +19,7 @@ echo $2;
 
 
 a=0
-
+ip=0;
 while [ $a -lt $2 ]
 do
   echo $a
