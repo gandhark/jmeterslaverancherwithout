@@ -38,8 +38,8 @@ done
 
 
 echo -e "\t\n\n\n\n\n\n\t ###############################################";
-echo $a;
-echo -e "\t\n\n\n\n\n\n\t #######value of $a########################################";
+echo $ip;
+echo -e "\t\n\n\n\n\n\n\t #######value of $p ########################################";
 
 #docker run --name jmetermaster -d -v $workspace:/reports -e IP=$a,$b  www.cybage-docker-registry.com:9080/jmetermaster
 
