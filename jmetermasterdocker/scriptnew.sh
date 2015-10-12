@@ -41,7 +41,7 @@ echo -e "\t\n\n\n\n\n\n\t ###############################################";
 echo $ip;
 echo -e "\t\n\n\n\n\n\n\t #######value of $p ########################################";
 
-docker run --name jmetermaster -d -v $workspace:/reports -e IP=$ip  www.cybage-docker-registry.com:9080/jmetermaster
+docker run --name jmetermaster -d -v $workspace:/reports -e IP=$ip -e HOSTIP=$hostip  HOSTNAME=$hostname  www.cybage-docker-registry.com:9080/jmetermaster
 
 
 
