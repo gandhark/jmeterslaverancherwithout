@@ -70,7 +70,7 @@ x=1;
 no=`expr "$x" + "$SlavesNumber"`
 
 echo $no;
-sudo docker rm -f $(sudo docker ps -aq | head -$no);
+#sudo docker rm -f $(sudo docker ps -aq | head -$no);
 
 echo -e "\t Checking Docker Status ";
 echo -e "\n";

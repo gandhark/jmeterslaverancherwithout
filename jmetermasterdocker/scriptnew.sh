@@ -6,8 +6,8 @@ export number=$2
 export hostip=$3
 export hostname=$4
 
-#docker pull www.cybage-docker-registry.com:9080/jmeterslave
-#docker pull www.cybage-docker-registry.com:9080/jmetermaster
+docker pull www.cybage-docker-registry.com:9080/jmeterslave00
+docker pull www.cybage-docker-registry.com:9080/jmetermaster00
 
 echo $2;
 
