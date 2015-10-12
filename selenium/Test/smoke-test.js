@@ -31,7 +31,7 @@ console.log(browser);
   browser.init({
     browserName: browserName
   }, function() {
-    browser.get("https://www.wikipedia.org/", function() {
+    browser.get("http://172.27.59.35", function() {
       browser.title(function(err, title) {
         if (err) {
           console.error(err);
@@ -39,7 +39,7 @@ console.log(browser);
           process.exit(1);
         }
 
-        title.should.include('Wikipedia');
+        title.should.include('A project management system for artisans');
         browser.quit();
       })
     });
