@@ -18,5 +18,5 @@ echo "$HOSTIP $HOSTNAME">>/etc/hosts
 
 echo "er">>/usr/demo.txt
 echo "made entry in hosts"
-sh jmeter-server.sh
+#sh jmeter-server.sh
 
