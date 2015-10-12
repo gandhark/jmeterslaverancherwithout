@@ -9,12 +9,12 @@ cp /jmeter.properties .
 
 SEARCH="remote_hosts=172.17.0.140"
 REPLACE="remote_hosts=$IP"
-mkdir $REPLACE
-mkdir $IP
+#mkdir $REPLACE
+#mkdir $IP
 sed -i "s/$SEARCH/$REPLACE/g" ./jmeter.properties
  pwd
 #echo "172.27.59.35 dev.alm-task-manager.com" >> /etc/hosts
-echo "$HOSTIP $HOSTNAME" >> /etc/hosts
+echo "$HOSTIP $HOST_NAMES" >> /etc/hosts
 cd /
 echo "executing jmeter test cases";
 jmeter -n -t url-benchmarknew.jmx -l /reports/reportnew.xml -r
