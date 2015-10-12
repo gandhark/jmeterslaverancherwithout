@@ -1,7 +1,11 @@
 #!/bin/bash
 
+
 export workspace=$1
 export number=$2
+export hostip=$3
+export hostname=$4
+
 docker pull www.cybage-docker-registry.com:9080/jmeterslave
 docker pull www.cybage-docker-registry.com:9080/jmetermaster
 
@@ -19,7 +23,7 @@ ip=127.0.0.1
 while [ $a -lt $2 ]
 do
   echo $a
-  docker run --name jmeterslave$a -d www.cybage-docker-registry.com:9080/jmeterslave
+  docker run --name jmeterslave$a -d  -e HOSTIP=$hostip HOSTNAME=$hostname www.cybage-docker-registry.com:9080/jmeterslave
 
   echo "fetching slave containers IP and storing it into variable a and variable b";
 
