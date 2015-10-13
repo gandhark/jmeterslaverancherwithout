@@ -48,7 +48,7 @@ for (( ; ; ))
 
 do  
 OUTPUT=$(sudo docker logs jmetermaster)
-#echo "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii";
+echo "Executing test cases";
 #OUTPUT=$(sudo docker logs jmetermaster) >/dev/null 2>&1
 
 if echo " $OUTPUT" | grep  -q "end of run";then
@@ -70,7 +70,7 @@ x=1;
 no=`expr "$x" + "$SlavesNumber"`
 
 echo $no;
-#sudo docker rm -f $(sudo docker ps -aq | head -$no);
+sudo docker rm -f $(sudo docker ps -aq | head -$no);
 
 echo -e "\t Checking Docker Status ";
 echo -e "\n";
