@@ -5,8 +5,8 @@ cd $WORKSPACE/jmetermasterdocker
 
 
 SlavesNumber=4;
-hostip=172.27.59.35
-hostname=dev.alm-task-manager.com
+hostip=$2
+hostname=$3
 
 
 echo "###################################### Giving Permission to Scripts ##############################################################";
