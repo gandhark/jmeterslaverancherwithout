@@ -1,0 +1,4 @@
+selenium_javaTests/bin/com/test/*.class
+selenium_javaTests/junit/*.xml
+selenium_javaTests/*.log
+
