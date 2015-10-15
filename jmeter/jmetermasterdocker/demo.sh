@@ -1,7 +1,7 @@
 #!/bin/bash +x 
 
 WORKSPACE=$1
-cd $WORKSPACE/jmeter/jmetermasterdocker
+#cd $WORKSPACE/jmeter/jmetermasterdocker
 
 
 SlavesNumber=4;
