@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+export WORKSPACE=$1
 
 echo Building test container image
-docker build -t selenium/test:local ./Test
+#docker build -t selenium/test:local ./Test
 
 echo 'Starting Selenium Hub Container...'
 HUB=$(docker run -d selenium/hub:2.47.1)
@@ -29,7 +30,7 @@ ipFIREFOX_NODE=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' $NOD
 docker logs -f $NODE_CHROME &
 docker logs -f $NODE_FIREFOX &
 echo 'Waiting for nodes to register and come online...'
-sleep 8s
+sleep 3s
 
 
 echo 'creating empty log files for nodes and hub'
@@ -37,19 +38,13 @@ echo 'creating empty log files for nodes and hub'
 touch node_firefox.log node_chrome.log hub.log
 
 
-echo "*************************************calling function firefox*****************************************"
+#echo "*************************************calling function firefox*****************************************"
 echo 'calling function test_node_firefox'
 
  test_node_firefox
  {
   BROWSER=firefox
   echo Running $BROWSER test...
-
-
-
-echo "**********running test cases with ant*********"
-#  TEST_CMD="node smoke-$BROWSER.js"
-
 
 
 
@@ -60,13 +55,19 @@ sed -i "s%${SEARCH1}%${REPLACE}%g"  ../selenium_javaTests/src/com/test/TitleChec
 sed -i "s%${SEARCH1}%${REPLACE}%g"  ../selenium_javaTests/src/com/test/TitleCheck_Chrome.java
 
 cd ./../selenium_javaTests/
-ant FireFoxDriver
 
 echo "***********************************************"
 
-# docker run -it --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
-  docker run -d --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
- 
+
+TEST_CMD="ant FireFoxDriver"
+
+
+
+docker run --name seleniumlocal -d --link $HUB_NAME:hub -v $WORKSPACE/selenium_grid/selenium_javaTests:/opt  www.cybage-docker-registry.com:9080/selenium_test:local
+
+
+
+
  STATUS=$? 
   TEST_CONTAINER_firefox=$(docker ps -aq | head -1)
 
@@ -92,11 +93,11 @@ echo 'creating test-local-firefix log file '
 
 }
 
-echo '**************************************end of function firefox****************************************'
+#echo '**************************************end of function firefox****************************************'
 
 
 
-echo '***********************************calling function chrome*****************************************'
+#echo '***********************************calling function chrome*****************************************'
 
 
 
@@ -107,15 +108,9 @@ test_node_chrome
  {
   BROWSER=chrome
   echo Running $BROWSER test...
-#  TEST_CMD="node smoke-$BROWSER.js"
-
-echo "*********for chrome target using ANT***********"
-ant ChromeDriver
-echo "***********************************************"
 
 
-#  docker run -it --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
-  docker run -d --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
+  docker run --name seleniumtest -d  --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
   STATUS=$?
   TEST_CONTAINER_chrome=$(docker ps -aq | head -1)
 

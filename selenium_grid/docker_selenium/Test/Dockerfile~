@@ -44,13 +44,3 @@ RUN apt-get update
 RUN apt-get install -y openjdk-7-jdk
 RUN apt-get install -y ant
 
-
-
-
-
-
-ADD ./run.sh /usr/bin/run.sh
-RUN chmod +x /usr/bin/run.sh
-
-CMD ["/bin/sh","-e","/usr/bin/run.sh"]
-

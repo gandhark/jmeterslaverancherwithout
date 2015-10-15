@@ -24,7 +24,7 @@ public class TitleCheck_Chrome
 	public void first() throws MalformedURLException
 	{
 		baseUrl="http://172.27.59.35";
-		hubUrl="http://172.27.59.27:4444/wd/hub";
+		hubUrl="http://172.17.0.184:4444/wd/hub";
 		driver=new RemoteWebDriver(new URL(hubUrl),DesiredCapabilities.chrome());
 	} 
 	
