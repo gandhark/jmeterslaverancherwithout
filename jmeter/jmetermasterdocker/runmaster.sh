@@ -17,6 +17,18 @@ sed -i "s/$SEARCH/$REPLACE/g" ./jmeter.properties
 echo "$HOSTIP $HOST_NAMES" >> /etc/hosts
 cd /
 echo "executing jmeter test cases";
+
+
+
+
+SEARCH1="dev.alm-task-manager.com"
+REPLACE1="$HOSTIP"
+
+sed -i "s%${SEARCH1}%${REPLACE1}%g" url-benchmarknew.jmx
+
+
+
+
 jmeter -n -t url-benchmarknew.jmx -l /reports/reportnew.xml -r
 
 sleep 400s;
