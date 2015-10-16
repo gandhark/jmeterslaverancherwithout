@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export WORKSPACE=$1
+export workspace=$1
 
 echo Building test container image
 #docker build -t selenium/test:local ./Test
@@ -63,7 +63,7 @@ TEST_CMD="ant FireFoxDriver"
 
 
 
-docker run --name seleniumlocal -d --link $HUB_NAME:hub -v $WORKSPACE/selenium_grid/selenium_javaTests:/opt  www.cybage-docker-registry.com:9080/selenium_test:local
+docker run --name seleniumlocal -d --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/opt  www.cybage-docker-registry.com:9080/selenium_test:local
 
 
 
