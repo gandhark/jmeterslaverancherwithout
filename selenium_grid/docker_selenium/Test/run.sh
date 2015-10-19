@@ -7,12 +7,12 @@ ls
 ant -version
 
 
-echo "**********************Running FIREFOX cases using ANT inside test:local container*************************"
+echo "**********************Running FIREFOX Test  cases using ANT inside test:local container*************************"
 ant FireFoxDriver
 echo "**********************************************************************************************************"
 
 
-echo "**********************Running FIREFOX cases using ANT inside test:local container*************************"
+	echo "**********************Running Chrome Test  cases using ANT inside test:local container*************************"
 ant ChromeDriver
 echo "**********************************************************************************************************"
 
