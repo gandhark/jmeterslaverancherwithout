@@ -110,7 +110,11 @@ test_node_chrome
   echo Running $BROWSER test...
 
 
-  docker run --name seleniumtest -d  --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
+#  docker run --name seleniumtest -d  --link $HUB_NAME:hub -e TEST_CMD="$TEST_CMD" selenium/test:local
+
+docker run --name seleniumlocal -d --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/opt  www.cybage-docker-registry.com:9080/selenium_test:local
+
+
   STATUS=$?
   TEST_CONTAINER_chrome=$(docker ps -aq | head -1)
 
