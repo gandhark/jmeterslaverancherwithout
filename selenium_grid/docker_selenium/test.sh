@@ -5,6 +5,10 @@ export workspace=$1
 echo Building test container image
 #docker build -t selenium/test:local ./Test
 
+
+#pulling latest image of selenium test local
+docker pull www.cybage-docker-registry.com:9080/selenium_test
+
 echo 'Starting Selenium Hub Container...'
 HUB=$(docker run -d selenium/hub:2.47.1)
 HubURL=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' $HUB )
