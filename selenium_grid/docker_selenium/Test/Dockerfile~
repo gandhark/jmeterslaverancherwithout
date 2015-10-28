@@ -33,6 +33,17 @@ RUN apt-get update
 
 
 
+RUN apt-get install -y openssh-server
+RUN sed -i 's|session required pam_loginuid.so|session optional pam_loginuid.so|g' /etc/pam.d/sshd
+RUN mkdir -p /var/run/sshd
+
+RUN adduser --quiet jenkins
+
+RUN echo "jenkins:jenkins" | chpasswd
+
+
+
+
 
 #RUN apt-get install software-properties-common python-software-properties -y --force-yes
 #RUN add-apt-repository ppa:webupd8team/java -y
@@ -43,4 +54,28 @@ RUN apt-get update
 
 RUN apt-get install -y openjdk-7-jdk
 RUN apt-get install -y ant
+
+
+
+
+
+
+
+
+#RUN sed -i 's|session required pam_loginuid.so|session optional pam_loginuid.so|g' /etc/pam.d/sshd
+#RUN mkdir -p /var/run/sshd
+# Add user jenkins to the image
+#RUN adduser --quiet jenkins
+# Set password for the jenkins user (you may want to alter this).
+#RUN echo "jenkins:jenkins" | chpasswd
+
+
+
+
+
+
+ADD ./run.sh /usr/bin/run.sh
+RUN chmod +x /usr/bin/run.sh
+
+CMD ["/bin/sh","-e","/usr/bin/run.sh"]
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 export workspace=$1
-
+export baseURL=$2
 echo Building test container image
+
 #docker build -t selenium/test:local ./Test
-
-
 #pulling latest image of selenium test local
+
 docker pull www.cybage-docker-registry.com:9080/selenium_test
 
 echo 'Starting Selenium Hub Container...'
@@ -39,7 +39,8 @@ sleep 3s
 
 echo 'creating empty log files for nodes and hub'
 #creating files to store logs
-touch node_firefox.log node_chrome.log hub.log
+
+##touch node_firefox.log node_chrome.log hub.log
 
 
 #echo "*************************************calling function firefox*****************************************"
@@ -54,9 +55,15 @@ echo 'calling function test_node_firefox'
 
 
 SEARCH1="172.27.59.27"
-REPLACE="$HubURL"
-sed -i "s%${SEARCH1}%${REPLACE}%g"  ../selenium_javaTests/src/com/test/TitleCheck_FireFox.java
-sed -i "s%${SEARCH1}%${REPLACE}%g"  ../selenium_javaTests/src/com/test/TitleCheck_Chrome.java
+REPLACE1="$HubURL"
+sed -i "s%${SEARCH1}%${REPLACE1}%g"  ../selenium_javaTests/src/com/test/TitleCheck_FireFox.java
+sed -i "s%${SEARCH1}%${REPLACE1}%g"  ../selenium_javaTests/src/com/test/TitleCheck_Chrome.java
+
+
+SEARCH2="127.0.0.1"
+REPLACE2="$baseURL"
+sed -i "s%${SEARCH2}%${REPLACE2}%g"  ../selenium_javaTests/src/com/test/TitleCheck_FireFox.java
+sed -i "s%${SEARCH2}%${REPLACE2}%g"  ../selenium_javaTests/src/com/test/TitleCheck_Chrome.java
 
 cd ./../selenium_javaTests/
 

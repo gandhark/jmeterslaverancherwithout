@@ -5,6 +5,5 @@ ENV TEST_CMD ""
 # The remainder of this build will be completed by the upstream image's ONBUILD commands
 
 
-# Install ANT 
-RUN apt-get install ant
+
 

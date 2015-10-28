@@ -20,7 +20,7 @@ public class TitleCheck_FireFox
 	@Before
 	public void first() throws MalformedURLException
 	{
-		baseUrl="http://172.27.59.35";
+		baseUrl="http://127.0.0.1";
 		hubUrl="http://172.27.59.27:4444/wd/hub";
 		driver=new RemoteWebDriver(new URL(hubUrl),DesiredCapabilities.firefox());
 	}

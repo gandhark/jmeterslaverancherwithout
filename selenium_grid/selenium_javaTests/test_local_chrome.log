@@ -1,5 +1,70 @@
 
-> docker-selenium-tests@0.0.0 start /usr/src/app
-> $TEST_CMD
+bin
+build.xml
+hub.log
+junit
+lib
+node_chrome.log
+node_firefox.log
+src
+test_local_chrome.log
+test_local_firefox.log
+Apache Ant(TM) version 1.9.4 compiled on October 7 2014
+**********************Running FIREFOX Test  cases using ANT inside test:local container*************************
+Buildfile: /opt/build.xml
 
-Buildfile: build.xml does not exist!
+clean:
+   [delete] Deleting directory /opt/bin
+   [delete] Deleting directory /opt/junit
+
+build-subprojects:
+
+init:
+    [mkdir] Created dir: /opt/bin
+
+build-project:
+     [echo] SampleSeleniumGrid: /opt/build.xml
+    [javac] Compiling 2 source files to /opt/bin
+
+build:
+
+FireFoxDriver:
+    [mkdir] Created dir: /opt/junit
+    [junit] Running com.test.TitleCheck_FireFox
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.499 sec
+    [junit] Output:
+    [junit] A ALM Project Management Tool
+    [junit] 
+
+BUILD SUCCESSFUL
+Total time: 9 seconds
+**********************************************************************************************************
+**********************Running Chrome Test  cases using ANT inside test:local container*************************
+Buildfile: /opt/build.xml
+
+clean:
+   [delete] Deleting directory /opt/bin
+   [delete] Deleting directory /opt/junit
+
+build-subprojects:
+
+init:
+    [mkdir] Created dir: /opt/bin
+
+build-project:
+     [echo] SampleSeleniumGrid: /opt/build.xml
+    [javac] Compiling 2 source files to /opt/bin
+
+build:
+
+ChromeDriver:
+    [mkdir] Created dir: /opt/junit
+    [junit] Running com.test.TitleCheck_Chrome
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.161 sec
+    [junit] Output:
+    [junit] A ALM Project Management Tool
+    [junit] 
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+**********************************************************************************************************

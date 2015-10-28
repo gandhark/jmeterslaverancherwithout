@@ -1,14 +1,40 @@
-06:18:47.295 INFO - Launching a Selenium Grid node
-06:18:48.311 INFO - Java: Oracle Corporation 25.45-b02
-06:18:48.321 INFO - OS: Linux 3.13.0-24-generic amd64
-06:18:48.339 INFO - v2.47.1, with Core v2.47.1. Built from revision 411b314
-06:18:48.470 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+03:07:57.027 INFO - Launching a Selenium Grid node
+03:07:58.870 INFO - Java: Oracle Corporation 25.45-b02
+03:07:58.870 INFO - OS: Linux 3.13.0-24-generic amd64
+03:07:58.891 INFO - v2.47.1, with Core v2.47.1. Built from revision 411b314
+03:07:59.255 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
 registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform LINUX
-06:18:48.471 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+03:07:59.257 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
 registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform LINUX
-06:18:48.474 INFO - Driver class not found: com.opera.core.systems.OperaDriver
-06:18:48.475 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
-06:18:48.594 INFO - Selenium Grid node is up and ready to register to the hub
-06:18:48.660 INFO - Starting auto registration thread. Will try to register every 5000 ms.
-06:18:48.663 INFO - Registering the node to the hub: http://172.17.0.194:4444/grid/register
-06:18:48.708 INFO - The node is registered to the hub and ready to use
+03:07:59.268 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+03:07:59.271 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+03:07:59.738 INFO - Selenium Grid node is up and ready to register to the hub
+03:07:59.925 INFO - Starting auto registration thread. Will try to register every 5000 ms.
+03:07:59.926 INFO - Registering the node to the hub: http://172.17.0.11:4444/grid/register
+03:07:59.973 INFO - The node is registered to the hub and ready to use
+03:08:22.610 INFO - Executing: [new session: Capabilities [{browserName=chrome, version=, platform=ANY}]])
+03:08:22.628 INFO - Creating a new session for Capabilities [{browserName=chrome, version=, platform=ANY}]
+Starting ChromeDriver 2.19.346067 (6abd8652f8bc7a1d825962003ac88ec6a37a82f1) on port 21971
+Only local connections are allowed.
+03:08:23.956 INFO - Done: [new session: Capabilities [{browserName=chrome, version=, platform=ANY}]]
+03:08:23.990 INFO - Executing: [get: http://172.27.59.35])
+03:08:28.173 INFO - Done: [get: http://172.27.59.35]
+03:08:28.184 INFO - Executing: [get title])
+03:08:28.201 INFO - Done: [get title]
+03:08:28.209 INFO - Executing: [get title])
+03:08:28.222 INFO - Done: [get title]
+03:08:28.233 INFO - Executing: [delete session: 6a2920ce-1cf2-4295-acb7-de622c690263])
+03:08:28.796 INFO - Done: [delete session: 6a2920ce-1cf2-4295-acb7-de622c690263]
+03:08:41.125 INFO - Executing: [new session: Capabilities [{browserName=chrome, version=, platform=ANY}]])
+03:08:41.127 INFO - Creating a new session for Capabilities [{browserName=chrome, version=, platform=ANY}]
+Starting ChromeDriver 2.19.346067 (6abd8652f8bc7a1d825962003ac88ec6a37a82f1) on port 31862
+Only local connections are allowed.
+03:08:42.314 INFO - Done: [new session: Capabilities [{browserName=chrome, version=, platform=ANY}]]
+03:08:42.351 INFO - Executing: [get: http://172.27.59.35])
+03:08:43.854 INFO - Done: [get: http://172.27.59.35]
+03:08:43.868 INFO - Executing: [get title])
+03:08:43.877 INFO - Done: [get title]
+03:08:43.891 INFO - Executing: [get title])
+03:08:43.903 INFO - Done: [get title]
+03:08:43.913 INFO - Executing: [delete session: aa0ccd35-0ec6-4aac-a19a-bafb5d4d382a])
+03:08:44.475 INFO - Done: [delete session: aa0ccd35-0ec6-4aac-a19a-bafb5d4d382a]
