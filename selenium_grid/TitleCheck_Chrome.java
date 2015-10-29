@@ -33,7 +33,7 @@ public class TitleCheck_Chrome
 	{
 		driver.get(baseUrl);
 		System.out.println(driver.getTitle());
-		Assert.assertEquals("A ALM Project Management Tool", driver.getTitle());
+		Assert.assertEquals("A project management system for artisans", driver.getTitle());
 	}
 	@After
 	public void tearDown()
