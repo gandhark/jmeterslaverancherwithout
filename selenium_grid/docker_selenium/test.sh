@@ -64,9 +64,7 @@ echo "***********************************************"
 
 
 
-docker run --name seleniumlocal -d -e CONT=FireFoxDriver --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/opt$
-#@docker run --name seleniumlocal -d -e CONT=FireFoxDriver --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/o$
-
+docker run --name seleniumlocal -d -e CONT=FireFoxDriver --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/opt www.cybage-docker-docker-registry.com:9080/selenium_test
 
 
 STATUS=$?
@@ -105,8 +103,7 @@ test_node_chrome
 
 
 
-docker run --name seleniumlocal -d -e CONT=ChromeDriver --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/opt $
-#@docker run --name seleniumlocal -d -e CONT=ChromeDriver --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/op$
+docker run --name seleniumlocal -d -e CONT=ChromeDriver --link $HUB_NAME:hub -v $workspace/selenium_grid/selenium_javaTests:/opt www.cybage-docker-docker-registry.com:9080/selenium_test
 
   STATUS=$?
   TEST_CONTAINER_chrome=$(docker ps -aq | head -1)
