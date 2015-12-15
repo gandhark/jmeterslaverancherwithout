@@ -7,7 +7,7 @@ export hostip=$3
 export hostname=$4
 
 docker pull www.cybage-docker-registry.com:9080/jmeterslave00
-docker pull www.cybage-docker-registry.com:9080/jmetermaster00
+docker pull www.cybage-docker-registry.com:9080/jmetermaster01
 
 echo $2;
 
@@ -20,20 +20,67 @@ a=0
 ip=''
 
 
+
+
+
 while [ $a -lt $2 ]
 do
   echo $a
+
+
   docker run --name jmeterslave$a -d  -e HOSTNAMES=$hostname -e HOSTIP=$hostip www.cybage-docker-registry.com:9080/jmeterslave00
 
   echo "fetching slave containers IP and storing it into variable a and variable b";
+echo  $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a )
+
+if [ $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a ) =  "  0" ] ; then
+echo "slave not up "
+break;
+
+fi
+
+
+
 
   ip=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a ),$ip
+echo $ip;
 
-  echo $ip
+
+
   #export host=dev.alm-task-manager.com
    a=`expr $a + 1`
 
 done
+echo "hiiiiiiiiiiiiiiiiiiiiiiii"
+echo $ip;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#while [ $a -lt $2 ]
+#do
+#  echo $a
+#  docker run --name jmeterslave$a -d  -e HOSTNAMES=$hostname -e HOSTIP=$hostip www.cybage-docker-registry.com:9080/jmeterslave00
+
+ # echo "fetching slave containers IP and storing it into variable a and variable b";
+
+  #ip=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a ),$ip
+
+  #echo $ip
+  ##export host=dev.alm-task-manager.com
+  # a=`expr $a + 1`
+
+#done
 
 
 
