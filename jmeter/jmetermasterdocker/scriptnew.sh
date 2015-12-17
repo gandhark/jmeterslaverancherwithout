@@ -35,6 +35,9 @@ echo  $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a
 
 if [ $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a ) =  "  0" ] ; then
 echo "slave not up "
+
+
+
 break;
 
 fi
@@ -51,6 +54,7 @@ echo $ip;
    a=`expr $a + 1`
 
 done
+
 echo "hiiiiiiiiiiiiiiiiiiiiiiii"
 echo $ip;
 
@@ -88,9 +92,12 @@ echo -e "\t\n\n\n\n\n\n\t ###############################################";
 echo $ip;
 echo -e "\t\n\n\n\n\n\n\t #######value of $p ########################################";
 
+ip1=${ip%?}
+
+echo $ip1
 #docker run --name jmetermaster -d -v $workspace:/reports -e IP=$ip -e HOSTIP=$hostip  HOST_NAMES=$hostname  www.cybage-docker-registry.com:9080/jmetermaster00
 
-docker run --name jmetermaster -d -v $workspace:/reports -e IP=$ip -e HOSTIP=$hostip -e  HOSTNAME=$hostname  www.cybage-docker-registry.com:9080/jmetermaster01
+docker run --name jmetermaster -d -v $workspace:/reports -e IP=$ip1 -e HOSTIP=$hostip -e  HOSTNAME=$hostname  www.cybage-docker-registry.com:9080/jmetermaster01
 
 
 
