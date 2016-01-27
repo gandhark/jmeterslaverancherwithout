@@ -6,7 +6,7 @@ export number=$2
 export hostip=$3
 export hostname=$4
 
-docker pull www.cybage-docker-registry.com:9080/jmeterslave00
+docker pull www.cybage-docker-registry.com:9080/jmeterslave11
 docker pull www.cybage-docker-registry.com:9080/jmetermaster01
 
 echo $2;
@@ -28,7 +28,7 @@ do
   echo $a
 
 
-  docker run --name jmeterslave$a -d  -e HOSTNAMES=$hostname -e HOSTIP=$hostip www.cybage-docker-registry.com:9080/jmeterslave00
+  docker run --name jmeterslave$a -d  -e HOSTNAMES=$hostname -e HOSTIP=$hostip  gandhark/jmeterslavewithoutrancher
 
   echo "fetching slave containers IP and storing it into variable a and variable b";
 echo  $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' jmeterslave$a )
@@ -57,16 +57,6 @@ done
 
 echo "hiiiiiiiiiiiiiiiiiiiiiiii"
 echo $ip;
-
-
-
-
-
-
-
-
-
-
 
 
 
